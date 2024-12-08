@@ -1,8 +1,9 @@
-import { Input } from "@/components/ui/input"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../components/ui/select"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardFooter, CardHeader } from "../components/ui/card"
-import { Progress } from "../components/ui/progress"
+import { Input } from "@/components/ui/input";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
+import { Progress } from "@/components/ui/progress";
+import Link from "next/link";
 
 export default function PublicDreams() {
   return (
@@ -27,30 +28,31 @@ export default function PublicDreams() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {[1, 2, 3, 4, 5, 6].map((dream) => (
-          <Card key={dream} className="flex flex-col">
-            <CardHeader>
-              <CardHeader>Título del Sueño {dream}</CardHeader>
-            </CardHeader>
-            <CardContent className="flex-grow">
-              <p className="text-sm text-gray-600 mb-4">
-                Breve descripción del sueño. Este es un ejemplo de cómo se vería la descripción en la tarjeta.
-              </p>
-              <div className="space-y-2">
-                <div className="flex justify-between text-sm">
-                  <span>Progreso</span>
-                  <span>65%</span>
+          <Link key={dream} href={`/dream-details/${dream}`} passHref>
+            <Card className="flex flex-col cursor-pointer hover:shadow-lg transition-shadow">
+              <CardHeader>
+                <h2 className="text-lg font-bold">Título del Sueño {dream}</h2>
+              </CardHeader>
+              <CardContent className="flex-grow">
+                <p className="text-sm text-gray-600 mb-4">
+                  Breve descripción del sueño. Este es un ejemplo de cómo se vería la descripción en la tarjeta.
+                </p>
+                <div className="space-y-2">
+                  <div className="flex justify-between text-sm">
+                    <span>Progreso</span>
+                    <span>65%</span>
+                  </div>
+                  <Progress value={65} className="w-full" />
                 </div>
-                <Progress value={65} className="w-full" />
-              </div>
-            </CardContent>
-            <CardFooter className="flex justify-between">
-              <Button variant="outline">Donar</Button>
-              <Button>Mentorear</Button>
-            </CardFooter>
-          </Card>
+              </CardContent>
+              <CardFooter className="flex justify-between">
+                <Button variant="outline">Donar</Button>
+                <Button>Mentorear</Button>
+              </CardFooter>
+            </Card>
+          </Link>
         ))}
       </div>
     </div>
-  )
+  );
 }
-
