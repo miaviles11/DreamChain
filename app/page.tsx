@@ -1,9 +1,11 @@
+
+import React from "react";
 import { Button } from "./components/ui/button";
-import { Card, CardContent } from "./components/ui/card";
-import { Gift, Users, LineChart, Github, Twitter, Linkedin } from 'lucide-react';
+import { Card, CardContent } from "@/components/ui/card";
+import { Gift, Users, LineChart, Github, Twitter, Linkedin } from "lucide-react";
 import Link from "next/link";
 
-export default function DreamChainLanding() {
+function DreamChainLanding() {
   return (
     <div className="min-h-screen flex flex-col bg-gray-100">
       <header className="py-6 px-4 border-b bg-white">
@@ -13,14 +15,14 @@ export default function DreamChainLanding() {
             <span className="text-2xl font-bold">DreamChain</span>
           </div>
           <nav className="hidden md:flex space-x-4">
-            <Link href="#" className="text-sm font-medium">
+            <Link href="#" className="px-4 py-2 text-lg font-medium rounded-md hover:bg-gray-100">
               Inicio
             </Link>
-            <Link href="#" className="text-sm font-medium">
+            <Link href="#" className="px-4 py-2 text-lg font-medium rounded-md hover:bg-gray-100">
               Cómo funciona
             </Link>
-            <Link href="#" className="text-sm font-medium">
-              Comunidad
+            <Link href="#" className="px-4 py-2 text-lg font-medium rounded-md hover:bg-gray-100">
+              Perfil
             </Link>
           </nav>
         </div>
@@ -36,10 +38,11 @@ export default function DreamChainLanding() {
             <Link href="/registrar-sueno">
               <Button size="lg" variant="default">Registrar un Sueño</Button>
             </Link>            
-			<Link href="/explorar-sueno">
-            <Button size="lg" variant="outline">
-              Explorar Sueños
-            </Button> </Link>
+            <Link href="/explorar-sueno">
+              <Button size="lg" variant="outline">
+                Explorar Sueños
+              </Button> 
+            </Link>
           </div>
         </section>
 
@@ -102,3 +105,5 @@ export default function DreamChainLanding() {
     </div>
   );
 }
+
+export default DreamChainLanding;

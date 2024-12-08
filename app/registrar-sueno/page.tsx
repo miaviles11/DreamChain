@@ -1,7 +1,6 @@
-'use client'
+"use client"
 import { Card, CardContent, CardHeader, CardFooter } from "@/components/ui/card"
 import { Input } from "../components/ui/input"
-import { Textarea } from "../components/ui/textarea"
 import { Button } from "../components/ui/button"
 import { Label } from "../components/ui/label"
 import { Upload, Target, Gift, Sparkles } from 'lucide-react'
