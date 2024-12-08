@@ -6,6 +6,8 @@ import { Button } from "../components/ui/button"
 import { Label } from "../components/ui/label"
 import { Upload, Target, Gift, Sparkles } from 'lucide-react'
 import React, { useState } from 'react';
+import { DreamDeployed } from "../service/service.dream.deploy"
+import { dreyerxMainnet } from "viem/chains"
 
 interface  FormDream {
   name_sleep:string,
@@ -15,7 +17,8 @@ interface  FormDream {
 }
 
 export default function DreamRegistryForm() {
-  
+  const dreamDeployed = new DreamDeployed();
+
   const [dreamForm, setDreamForm] =  useState<FormDream>({
     name_sleep: '',
     dream_description: '',
@@ -34,6 +37,7 @@ export default function DreamRegistryForm() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     localStorage.setItem('form-dream', JSON.stringify(dreamForm));
+    dreamDeployed.write(30);
     console.log(localStorage.getItem('form-dream')); // Aquí puedes enviar el estado al servidor o hacer lo que necesites
   };
 

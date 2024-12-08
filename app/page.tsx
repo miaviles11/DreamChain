@@ -4,6 +4,9 @@ import { Gift, Users, LineChart, Github, Twitter, Linkedin } from 'lucide-react'
 import Link from "next/link";
 
 export default function DreamChainLanding() {
+
+
+  
   return (
     <div className="min-h-screen flex flex-col bg-gray-100">
       <header className="py-6 px-4 border-b bg-white">
