@@ -17,11 +17,11 @@ export default function UserDashboard() {
             <Image
               src="/logo.png"
               alt="DreamChain Logo"
-              width={40}
-              height={40}
+              width={60}
+              height={60}
               className="rounded-full"
             />
-            <span className="text-lg font-bold">DreamChain</span>
+            <span className="text-2xl font-bold">DreamChain</span>
           </div>
         </SidebarHeader>
         <SidebarContent>
@@ -49,9 +49,6 @@ export default function UserDashboard() {
 
       {/* Main Content */}
       <div className="flex-1 flex flex-col">
-        <header className="bg-white shadow-sm p-4">
-          <h1 className="text-xl font-semibold">Perfil</h1>
-        </header>
         <main className="flex-1 p-6">
           <div className="flex justify-between items-center mb-6">
             <h2 className="text-2xl font-bold">Mis Sueños</h2>
