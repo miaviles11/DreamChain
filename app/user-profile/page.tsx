@@ -17,11 +17,11 @@ export default function UserProfile() {
             <Image
               src="/logo.png"
               alt="DreamChain Logo"
-              width={40}
-              height={40}
+              width={60}
+              height={60}
               className="rounded-full"
             />
-            <span className="text-lg font-bold">DreamChain</span>
+            <span className="text-2xl font-bold">DreamChain</span>
           </div>
         </SidebarHeader>
         <SidebarContent>
