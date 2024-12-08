@@ -1,13 +1,36 @@
 "use client";
 
+import { useState } from "react";
 import { Sidebar, SidebarHeader, SidebarContent, SidebarMenu, SidebarMenuItem } from "@/components/ui/sidebar";
 import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from "@/components/ui/table";
 import { Card, CardHeader, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
+import { ethers } from "ethers";
 
 export default function UserDashboard() {
+  // Estado para manejar la cuenta conectada
+  const [account, setAccount] = useState<string | null>(null);
+
+  // Función para conectar MetaMask
+  const connectMetaMask = async () => {
+    if (typeof window.ethereum !== "undefined") {
+      try {
+        // Solicita acceso a las cuentas de MetaMask
+        const accounts = await window.ethereum.request({
+          method: "eth_requestAccounts",
+        });
+        // Asigna la cuenta conectada al estado
+        setAccount(accounts[0]);
+      } catch (error) {
+        console.error("Error conectando con MetaMask:", error);
+      }
+    } else {
+      alert("MetaMask no está instalada.");
+    }
+  };
+
   return (
     <div className="flex h-screen bg-gray-100">
       {/* Sidebar */}
@@ -17,11 +40,11 @@ export default function UserDashboard() {
             <Image
               src="/logo.png"
               alt="DreamChain Logo"
-              width={60}
-              height={60}
+              width={40}
+              height={40}
               className="rounded-full"
             />
-            <span className="text-2xl font-bold">DreamChain</span>
+            <span className="text-lg font-bold">DreamChain</span>
           </div>
         </SidebarHeader>
         <SidebarContent>
@@ -49,6 +72,9 @@ export default function UserDashboard() {
 
       {/* Main Content */}
       <div className="flex-1 flex flex-col">
+        <header className="bg-white shadow-sm p-4">
+          <h1 className="text-xl font-semibold">Perfil</h1>
+        </header>
         <main className="flex-1 p-6">
           <div className="flex justify-between items-center mb-6">
             <h2 className="text-2xl font-bold">Mis Sueños</h2>
@@ -58,6 +84,19 @@ export default function UserDashboard() {
               </Button>
             </Link>
           </div>
+          {/* Agregar la información de MetaMask */}
+          <div className="mb-6">
+            <button
+              onClick={connectMetaMask}
+              className={`px-6 py-2 rounded-md text-white font-medium transition-all ${
+                account ? "bg-green-500" : "bg-blue-500 hover:bg-blue-600"
+              }`}
+              style={{ minWidth: "200px", maxWidth: "100%", whiteSpace: "nowrap" }}
+            >
+              {account ? `Conectado: ${account.slice(0, 6)}...${account.slice(-4)}` : "Conectar MetaMask"}
+            </button>
+          </div>
+
           <Card>
             <CardHeader>
               <h3 className="text-lg font-semibold">Lista de Sueños</h3>

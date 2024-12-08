@@ -6,17 +6,17 @@ const teamMembers = [
   {
     name: "Alejandro Rodríguez Mora",
     role: "Back-end Programmer",
-    image: "/john.jpg",
+    image: "/alejandro.jpg",
   },
   {
     name: "Alex Sebastián Mejía",
     role: "Blockchain Developer Back-end",
-    image: "/jane.jpg",
+    image: "/alex.jpg",
   },
   {
     name: "Álvaro Morales",
     role: "Blockchain Developer Back-end",
-    image: "/alice.jpg",
+    image: "/alvaro.jpg",
   },
   {
     name: "Miguel Ángel Avilés",
