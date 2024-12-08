@@ -40,7 +40,7 @@ export default function HowItWorks() {
       {/* Main Content */}
       <main className="flex-grow">
         {/* Hero Section */}
-        <section className="py-20 bg-gray-50 text-center">
+        <section className="py-20 bg-gray-100 text-center">
           <h1 className="text-4xl font-bold mb-4 text-primary">¿Cómo Funciona DreamChain?</h1>
           <p className="text-lg text-muted-foreground">Convierte tus metas en colaboraciones globales.</p>
         </section>
@@ -68,7 +68,7 @@ export default function HowItWorks() {
         </section>
 
         {/* FAQs Section */}
-        <section className="py-16 bg-gray-50">
+        <section className="py-16 bg-gray-100">
           <div className="container mx-auto">
             <h2 className="text-3xl font-bold text-center mb-12 text-primary">Preguntas Frecuentes</h2>
             <Accordion>
@@ -92,7 +92,7 @@ export default function HowItWorks() {
         </section>
 
         {/* Call to Action */}
-        <section className="py-16 bg-primary text-black text-center">
+        <section className="py-16 bg-white text-black text-center">
           <div className="container mx-auto">
             <h2 className="text-3xl font-bold mb-8">¿Listo para empezar?</h2>
             <div className="flex justify-center space-x-4">

@@ -6,7 +6,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Gift, Users, LineChart, Github, Twitter, Linkedin } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
-import { Team } from "@/components/ui/team"; // Importa el componente del equipo
+import { Team } from "@/components/ui/team";
+import { Testimonials } from "@/components/ui/testimonials"; // Importa el componente de testimonios
 
 function DreamChainLanding() {
   return (
@@ -27,10 +28,16 @@ function DreamChainLanding() {
             <Link href="/" className="px-4 py-2 text-lg font-medium rounded-md hover:bg-gray-100">
               Inicio
             </Link>
-            <Link href="how-it-works" className="px-4 py-2 text-lg font-medium rounded-md hover:bg-gray-100">
+            <Link
+              href="how-it-works"
+              className="px-4 py-2 text-lg font-medium rounded-md hover:bg-gray-100"
+            >
               Cómo funciona
             </Link>
-            <Link href="user-dashboard" className="px-4 py-2 text-lg font-medium rounded-md hover:bg-gray-100">
+            <Link
+              href="user-dashboard"
+              className="px-4 py-2 text-lg font-medium rounded-md hover:bg-gray-100"
+            >
               Perfil
             </Link>
           </nav>
@@ -46,16 +53,20 @@ function DreamChainLanding() {
           </p>
           <div className="flex justify-center space-x-4">
             <Link href="/registrar-sueno">
-              <Button size="lg" variant="default">Registrar un Sueño</Button>
+              <Button size="lg" variant="default">
+                Registrar un Sueño
+              </Button>
             </Link>
             <Link href="/explorar-sueno">
-              <Button size="lg" variant="outline">Explorar Sueños</Button>
+              <Button size="lg" variant="outline">
+                Explorar Sueños
+              </Button>
             </Link>
           </div>
         </section>
 
         {/* Benefits Section */}
-        <section className="py-20 bg-gray-50">
+        <section className="py-20 bg-white">
           <div className="container mx-auto">
             <h2 className="text-3xl font-bold text-center mb-12">Beneficios de DreamChain</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -84,11 +95,14 @@ function DreamChainLanding() {
           </div>
         </section>
 
+		{/* Testimonials Section */}
+        <Testimonials />
+
         {/* Team Section */}
-        <Team /> {/* Inserta el componente del equipo aquí */}
+        <Team />
       </main>
 
-      <footer className="py-6 px-4 border-t bg-gray-100">
+      <footer className="py-6 px-4 border-t bg-white">
         <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
           <nav className="flex space-x-4 mb-4 md:mb-0">
             <Link href="#" className="text-sm text-gray-500 hover:underline">
