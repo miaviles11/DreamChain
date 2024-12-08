@@ -35,10 +35,11 @@ export default function DreamChainLanding() {
           <div className="flex justify-center space-x-4">
             <Link href="/registrar-sueno">
               <Button size="lg" variant="default">Registrar un Sueño</Button>
-            </Link>
+            </Link>            
+			<Link href="/explorar-sueno">
             <Button size="lg" variant="outline">
               Explorar Sueños
-            </Button>
+            </Button> </Link>
           </div>
         </section>
 
