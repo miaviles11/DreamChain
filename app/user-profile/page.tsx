@@ -27,12 +27,12 @@ export default function UserProfile() {
         <SidebarContent>
           <SidebarMenu>
             <SidebarMenuItem href="/user-dashboard">
-              <button className="w-full px-4 py-2 text-black rounded-md hover:text-white">
+              <button className="w-full px-4 py-2 text-black rounded-md">
                 Mis Sueños
               </button>
             </SidebarMenuItem>
             <SidebarMenuItem href="/user-profile">
-              <button className="w-full px-4 py-2 text-black rounded-md hover:text-white">
+              <button className="w-full px-4 py-2 text-black rounded-md">
                 Cuenta
               </button>
             </SidebarMenuItem>

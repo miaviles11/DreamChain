@@ -37,7 +37,7 @@ export const SidebarMenuItem = ({
 	  <li>
 		<Link
 		  href={href}
-		  className="w-full flex items-center px-4 py-2 rounded-md text-left hover:bg-gray-700"
+		  className="w-full flex items-center px-4 py-2 rounded-md text-left hover:bg-gray-100"
 		>
 		  {children}
 		</Link>
@@ -48,7 +48,7 @@ export const SidebarMenuItem = ({
 export const SidebarMenuButton = ({ children, onClick }: { children: React.ReactNode; onClick: () => void }) => {
   return (
     <button
-      className="w-full flex items-center px-4 py-2 rounded-md text-left hover:bg-gray-700"
+      className="w-full flex items-center px-4 py-2 rounded-md text-left hover:bg-gray-100"
       onClick={onClick}
     >
       {children}
@@ -60,7 +60,7 @@ export const SidebarFooter = () => {
   return (
     <footer className="p-4 border-t border-gray-700">
       <Link href="/">
-        <button className="w-full bg-gray-800 hover:bg-gray-700 text-white py-2 px-4 rounded-md">
+        <button className="w-full bg-gray-800 hover:bg-gray-100 text-white py-2 px-4 rounded-md">
           Volver al Inicio
         </button>
       </Link>
