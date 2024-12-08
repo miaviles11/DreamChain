@@ -4,16 +4,26 @@ import { Button } from "./components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Gift, Users, LineChart, Github, Twitter, Linkedin } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 function DreamChainLanding() {
   return (
     <div className="min-h-screen flex flex-col bg-gray-100">
       <header className="py-6 px-4 border-b bg-white">
         <div className="container mx-auto flex justify-between items-center">
+          {/* Logo con la imagen */}
           <div className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-black rounded-full" />
+            <Image
+              src="/logo.png" // Ruta de la imagen
+              alt="Logo de DreamChain"
+              width={70} // Ajusta el ancho según tu diseño
+              height={70} // Ajusta la altura según tu diseño
+              className="rounded-full" // Opcional: aplica un borde redondeado para mantener el estilo
+            />
             <span className="text-2xl font-bold">DreamChain</span>
           </div>
+
+          {/* Navegación */}
           <nav className="hidden md:flex space-x-4">
             <Link href="/" className="px-4 py-2 text-lg font-medium rounded-md hover:bg-gray-100">
               Inicio
@@ -27,7 +37,6 @@ function DreamChainLanding() {
           </nav>
         </div>
       </header>
-
       <main className="flex-grow">
         <section className="py-20 text-center">
           <h1 className="text-4xl font-bold mb-4">Registra tus sueños, encuentra apoyo, logra lo imposible</h1>
