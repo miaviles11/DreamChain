@@ -1,53 +1,63 @@
-"use client"
+"use client";
 
-import { Progress } from "@/components/ui/progress"
-import { Button } from "@/components/ui/button"
-import { Avatar, AvatarFallback } from "@/components/ui/avatar"
-import { Card, CardContent, CardHeader } from "@/components/ui/card"
-import { Textarea } from "@/components/ui/textarea"
+import { Progress } from "@/components/ui/progress";
+import { Button } from "@/components/ui/button";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { Textarea } from "@/components/ui/textarea";
+import Link from "next/link";
 
 export default function DreamDetailsPage() {
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-6">Dream Name</h1>
-      
+      {/* Botón para regresar */}
+      <Link href="/">
+        <Button variant="outline" className="mb-6">
+          Volver
+        </Button>
+      </Link>
+
+      <h1 className="text-3xl font-bold mb-6">Nombre del Sueño</h1>
+
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div className="md:col-span-2">
           <Card className="mb-8">
             <CardHeader>
-              <CardHeader>Description and Goals</CardHeader>
+              <h2 className="text-xl font-bold">Descripción y Metas</h2>
             </CardHeader>
             <CardContent>
               <p className="mb-4">
-                This is where the full description of the dream goes. It should include all the details about what the dreamer hopes to achieve and why it's important to them.
+                Aquí va la descripción completa del sueño. Debería incluir todos los detalles sobre lo que el soñador espera lograr y por qué es importante para ellos.
               </p>
-              <h3 className="font-semibold mb-2">Goals:</h3>
+              <h3 className="font-semibold mb-2">Metas:</h3>
               <ul className="list-disc list-inside">
-                <li>Goal 1</li>
-                <li>Goal 2</li>
-                <li>Goal 3</li>
+                <li>Meta 1</li>
+                <li>Meta 2</li>
+                <li>Meta 3</li>
               </ul>
             </CardContent>
           </Card>
 
           <Card className="mb-8">
             <CardHeader>
-              <CardHeader>Progress</CardHeader>
+              <h2 className="text-xl font-bold">Progreso</h2>
             </CardHeader>
             <CardContent>
               <Progress value={33} className="w-full" />
-              <p className="text-center mt-2">33% Complete</p>
+              <p className="text-center mt-2">33% Completado</p>
             </CardContent>
           </Card>
 
           <div className="flex space-x-4 mb-8">
-            <Button size="lg">Donate</Button>
-            <Button size="lg" variant="outline">Become a Mentor</Button>
+            <Button size="lg">Donar</Button>
+            <Button size="lg" variant="outline">
+              Convertirse en Mentor
+            </Button>
           </div>
 
           <Card>
             <CardHeader>
-              <CardHeader>Mentor Comments</CardHeader>
+              <h2 className="text-xl font-bold">Comentarios de los Mentores</h2>
             </CardHeader>
             <CardContent>
               <div className="space-y-4">
@@ -57,7 +67,9 @@ export default function DreamDetailsPage() {
                   </Avatar>
                   <div className="flex-1">
                     <p className="font-semibold">John Doe</p>
-                    <p className="text-sm text-gray-500">Great progress! Keep it up!</p>
+                    <p className="text-sm text-gray-500">
+                      ¡Gran progreso! Sigue así.
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">
@@ -66,12 +78,14 @@ export default function DreamDetailsPage() {
                   </Avatar>
                   <div className="flex-1">
                     <p className="font-semibold">Jane Smith</p>
-                    <p className="text-sm text-gray-500">Have you considered trying this approach?</p>
+                    <p className="text-sm text-gray-500">
+                      ¿Has considerado probar este enfoque?
+                    </p>
                   </div>
                 </div>
               </div>
-              <Textarea className="mt-4" placeholder="Add your comment..." />
-              <Button className="mt-2">Post Comment</Button>
+              <Textarea className="mt-4" placeholder="Añade tu comentario..." />
+              <Button className="mt-2">Publicar Comentario</Button>
             </CardContent>
           </Card>
         </div>
@@ -79,7 +93,7 @@ export default function DreamDetailsPage() {
         <div className="md:col-span-1">
           <Card className="mb-8">
             <CardHeader>
-              <CardHeader>Current Mentors</CardHeader>
+              <h2 className="text-xl font-bold">Mentores Actuales</h2>
             </CardHeader>
             <CardContent>
               <ul className="space-y-4">
@@ -89,7 +103,9 @@ export default function DreamDetailsPage() {
                   </Avatar>
                   <div>
                     <p className="font-semibold">Mentor 1</p>
-                    <p className="text-sm text-gray-500">Expertise: Web Development</p>
+                    <p className="text-sm text-gray-500">
+                      Especialidad: Desarrollo Web
+                    </p>
                   </div>
                 </li>
                 <li className="flex items-center space-x-2">
@@ -98,7 +114,9 @@ export default function DreamDetailsPage() {
                   </Avatar>
                   <div>
                     <p className="font-semibold">Mentor 2</p>
-                    <p className="text-sm text-gray-500">Expertise: Marketing</p>
+                    <p className="text-sm text-gray-500">
+                      Especialidad: Marketing
+                    </p>
                   </div>
                 </li>
               </ul>
@@ -107,7 +125,7 @@ export default function DreamDetailsPage() {
 
           <Card>
             <CardHeader>
-              <CardHeader>Top Donors</CardHeader>
+              <h2 className="text-xl font-bold">Principales Donantes</h2>
             </CardHeader>
             <CardContent>
               <ul className="space-y-4">
@@ -116,8 +134,8 @@ export default function DreamDetailsPage() {
                     <AvatarFallback>D1</AvatarFallback>
                   </Avatar>
                   <div>
-                    <p className="font-semibold">Donor 1</p>
-                    <p className="text-sm text-gray-500">Amount: $500</p>
+                    <p className="font-semibold">Donante 1</p>
+                    <p className="text-sm text-gray-500">Cantidad: $500</p>
                   </div>
                 </li>
                 <li className="flex items-center space-x-2">
@@ -125,8 +143,8 @@ export default function DreamDetailsPage() {
                     <AvatarFallback>D2</AvatarFallback>
                   </Avatar>
                   <div>
-                    <p className="font-semibold">Donor 2</p>
-                    <p className="text-sm text-gray-500">Amount: $350</p>
+                    <p className="font-semibold">Donante 2</p>
+                    <p className="text-sm text-gray-500">Cantidad: $350</p>
                   </div>
                 </li>
               </ul>
@@ -135,6 +153,5 @@ export default function DreamDetailsPage() {
         </div>
       </div>
     </div>
-  )
+  );
 }
-

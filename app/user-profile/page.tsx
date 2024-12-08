@@ -1,33 +1,49 @@
-"use client"
+"use client";
 
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Sidebar, SidebarHeader, SidebarContent, SidebarMenu, SidebarMenuItem, SidebarMenuButton } from "@/components/ui/sidebar"
-import Link from "next/link"
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Sidebar, SidebarHeader, SidebarContent, SidebarMenu, SidebarMenuItem } from "@/components/ui/sidebar";
+import Link from "next/link";
+import Image from "next/image";
 
 export default function UserProfile() {
   return (
     <div className="flex h-screen"> {/* Flex para layout horizontal y altura completa */}
       {/* Sidebar */}
       <Sidebar>
-        <SidebarHeader>DreamChain</SidebarHeader>
+        <SidebarHeader>
+          <div className="flex items-center space-x-2">
+            <Image
+              src="/logo.png"
+              alt="DreamChain Logo"
+              width={40}
+              height={40}
+              className="rounded-full"
+            />
+            <span className="text-lg font-bold">DreamChain</span>
+          </div>
+        </SidebarHeader>
         <SidebarContent>
           <SidebarMenu>
-            <SidebarMenuItem>
-              <Link href="/user-dashboard">
-                <SidebarMenuButton>Mis Sueños</SidebarMenuButton>
-              </Link>
+            <SidebarMenuItem href="/user-dashboard">
+              <button className="w-full px-4 py-2 text-black rounded-md hover:text-white">
+                Mis Sueños
+              </button>
             </SidebarMenuItem>
-            <SidebarMenuItem>
-              <Link href="/user-profile">
-                <SidebarMenuButton>Cuenta</SidebarMenuButton>
-              </Link>
-            </SidebarMenuItem>
-            <SidebarMenuItem>
-              <SidebarMenuButton>Salir</SidebarMenuButton>
+            <SidebarMenuItem href="/user-profile">
+              <button className="w-full px-4 py-2 text-black rounded-md hover:text-white">
+                Cuenta
+              </button>
             </SidebarMenuItem>
           </SidebarMenu>
+          <div className="mt-auto p-4">
+            <Link href="/">
+              <button className="w-full px-4 py-2 text-white bg-black rounded-md transition">
+                Volver al Inicio
+              </button>
+            </Link>
+          </div>
         </SidebarContent>
       </Sidebar>
 
@@ -44,7 +60,7 @@ export default function UserProfile() {
         {/* Form to Update Personal Data */}
         <Card>
           <CardHeader>
-            <CardHeader>Actualizar Información Personal</CardHeader>
+            <h3 className="text-lg font-bold">Actualizar Información Personal</h3>
           </CardHeader>
           <CardContent className="space-y-4">
             <div>
@@ -66,7 +82,7 @@ export default function UserProfile() {
         {/* Dreams Created Section */}
         <Card>
           <CardHeader>
-            <CardHeader>Gestión de Sueños</CardHeader>
+            <h3 className="text-lg font-bold">Gestión de Sueños</h3>
           </CardHeader>
           <CardContent>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -87,5 +103,5 @@ export default function UserProfile() {
         </Card>
       </div>
     </div>
-  )
+  );
 }

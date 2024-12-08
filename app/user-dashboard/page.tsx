@@ -1,33 +1,53 @@
-"use client"
+"use client";
 
-import { Sidebar, SidebarHeader, SidebarContent, SidebarMenu, SidebarMenuItem, SidebarMenuButton } from "@/components/ui/sidebar";
+import { Sidebar, SidebarHeader, SidebarContent, SidebarMenu, SidebarMenuItem } from "@/components/ui/sidebar";
 import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from "@/components/ui/table";
 import { Card, CardHeader, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function UserDashboard() {
   return (
     <div className="flex h-screen bg-gray-100">
+      {/* Sidebar */}
       <Sidebar>
-        <SidebarHeader>DreamChain</SidebarHeader>
+        <SidebarHeader>
+          <div className="flex items-center space-x-2">
+            <Image
+              src="/logo.png"
+              alt="DreamChain Logo"
+              width={40}
+              height={40}
+              className="rounded-full"
+            />
+            <span className="text-lg font-bold">DreamChain</span>
+          </div>
+        </SidebarHeader>
         <SidebarContent>
           <SidebarMenu>
-            <SidebarMenuItem>
-              <SidebarMenuButton>Mis Sueños</SidebarMenuButton>
+            <SidebarMenuItem href="/user-dashboard">
+              <button className="w-full px-4 py-2 text-black rounded-md hover:text-white">
+                Mis Sueños
+              </button>
             </SidebarMenuItem>
-            <SidebarMenuItem>
-			  <Link href="/user-profile">
-              	<SidebarMenuButton>
-					Cuenta</SidebarMenuButton>
-			  </Link>
-            </SidebarMenuItem>
-            <SidebarMenuItem>
-              <SidebarMenuButton>Salir</SidebarMenuButton>
+            <SidebarMenuItem href="/user-profile">
+              <button className="w-full px-4 py-2 text-black rounded-md hover:text-white">
+                Cuenta
+              </button>
             </SidebarMenuItem>
           </SidebarMenu>
+          <div className="mt-auto p-4">
+            <Link href="/">
+              <button className="w-full px-4 py-2 text-white bg-black rounded-md hover:bg-black hover:text-white transition">
+                Volver al Inicio
+              </button>
+            </Link>
+          </div>
         </SidebarContent>
       </Sidebar>
+
+      {/* Main Content */}
       <div className="flex-1 flex flex-col">
         <header className="bg-white shadow-sm p-4">
           <h1 className="text-xl font-semibold">Perfil</h1>
@@ -35,13 +55,15 @@ export default function UserDashboard() {
         <main className="flex-1 p-6">
           <div className="flex justify-between items-center mb-6">
             <h2 className="text-2xl font-bold">Mis Sueños</h2>
-			<Link href="/registrar-sueno">
-            	<Button size="lg" variant="default">Registrar Nuevo Sueño</Button>
-			</Link>
+            <Link href="/registrar-sueno">
+              <Button size="lg" variant="default">
+                Registrar Nuevo Sueño
+              </Button>
+            </Link>
           </div>
           <Card>
             <CardHeader>
-              <CardHeader>Lista de Sueños</CardHeader>
+              <h3 className="text-lg font-semibold">Lista de Sueños</h3>
             </CardHeader>
             <CardContent>
               <Table>
