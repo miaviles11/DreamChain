@@ -1,7 +1,0 @@
-{
-  "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/page": "app/page.js",
-  "/registrar-sueno/page": "app/registrar-sueno/page.js",
-  "/explorar-sueno/page": "app/explorar-sueno/page.js",
-  "/dream-details/[id]/page": "app/dream-details/[id]/page.js"
-}
