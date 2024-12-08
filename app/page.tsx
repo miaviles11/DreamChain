@@ -1,3 +1,4 @@
+"use client";
 
 import React from "react";
 import { Button } from "./components/ui/button";
@@ -5,25 +6,23 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Gift, Users, LineChart, Github, Twitter, Linkedin } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import { Team } from "@/components/ui/team"; // Importa el componente del equipo
 
 function DreamChainLanding() {
   return (
     <div className="min-h-screen flex flex-col bg-gray-100">
       <header className="py-6 px-4 border-b bg-white">
         <div className="container mx-auto flex justify-between items-center">
-          {/* Logo con la imagen */}
           <div className="flex items-center space-x-2">
             <Image
-              src="/logo.png" // Ruta de la imagen
+              src="/logo.png"
               alt="Logo de DreamChain"
-              width={70} // Ajusta el ancho según tu diseño
-              height={70} // Ajusta la altura según tu diseño
-              className="rounded-full" // Opcional: aplica un borde redondeado para mantener el estilo
+              width={70}
+              height={70}
+              className="rounded-full"
             />
             <span className="text-2xl font-bold">DreamChain</span>
           </div>
-
-          {/* Navegación */}
           <nav className="hidden md:flex space-x-4">
             <Link href="/" className="px-4 py-2 text-lg font-medium rounded-md hover:bg-gray-100">
               Inicio
@@ -37,7 +36,9 @@ function DreamChainLanding() {
           </nav>
         </div>
       </header>
+
       <main className="flex-grow">
+        {/* Hero Section */}
         <section className="py-20 text-center">
           <h1 className="text-4xl font-bold mb-4">Registra tus sueños, encuentra apoyo, logra lo imposible</h1>
           <p className="text-xl text-gray-500 mb-8">
@@ -46,15 +47,14 @@ function DreamChainLanding() {
           <div className="flex justify-center space-x-4">
             <Link href="/registrar-sueno">
               <Button size="lg" variant="default">Registrar un Sueño</Button>
-            </Link>            
+            </Link>
             <Link href="/explorar-sueno">
-              <Button size="lg" variant="outline">
-                Explorar Sueños
-              </Button> 
+              <Button size="lg" variant="outline">Explorar Sueños</Button>
             </Link>
           </div>
         </section>
 
+        {/* Benefits Section */}
         <section className="py-20 bg-gray-50">
           <div className="container mx-auto">
             <h2 className="text-3xl font-bold text-center mb-12">Beneficios de DreamChain</h2>
@@ -83,9 +83,12 @@ function DreamChainLanding() {
             </div>
           </div>
         </section>
+
+        {/* Team Section */}
+        <Team /> {/* Inserta el componente del equipo aquí */}
       </main>
 
-      <footer className="py-6 px-4 border-t bg-white">
+      <footer className="py-6 px-4 border-t bg-gray-100">
         <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
           <nav className="flex space-x-4 mb-4 md:mb-0">
             <Link href="#" className="text-sm text-gray-500 hover:underline">
