@@ -3,7 +3,7 @@ import React, { ButtonHTMLAttributes, ReactNode } from "react";
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
   size?: "sm" | "md" | "lg";
-  variant?: "default" | "outline";
+  variant?: "default" | "outline" | "link" | "destructive";
 }
 
 export function Button({
@@ -24,6 +24,8 @@ export function Button({
   const variantClasses = {
     default: "bg-black text-white hover:bg-gray-800",
     outline: "bg-transparent border border-black text-black hover:bg-gray-200",
+	link: "text-blue-500 underline hover:text-blue-600", // Estilo para "link"
+	destructive: "text-red-500 underline hover:text-red-800", // Estilo para "destructive"
   };
 
   return (
