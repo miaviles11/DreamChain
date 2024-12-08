@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { BookOpen, Users, Target, Shield, Globe, Eye } from "lucide-react";
 import Link from "next/link";
+import Footer from "@/components/ui/footer";
 
 export default function HowItWorks() {
   return (
@@ -114,6 +115,8 @@ export default function HowItWorks() {
           </div>
         </section>
       </main>
+	  {/* Footer */}
+      <Footer />
     </div>
   );
 }
